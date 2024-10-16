@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="http://ogp.me/ns/fb#">
+<head>
+    <script src='https://cdn.veriff.me/sdk/js/1.1/veriff.min.js'></script>
+    <script src='https://cdn.veriff.me/incontext/js/v1/veriff.js'></script>
+
+    <style>
+        .centered {
+          position: fixed;
+          top: 50%;
+          left: 50%;
+          /* bring your own prefixes */
+          transform: translate(-50%, -50%);
+        }
+    </style>
+</head>
+<body>
+
+<div id='veriff-root' class='centered'></div>
+<script>
+    const queryString = window.location.search;
+    const urlParams = new URLSearchParams(queryString);
+    const email = urlParams.get('email');
+    const apiKey = urlParams.get('apikey');
+
+  const veriff = Veriff({
+    host: 'https://stationapi.veriff.com',
+    apiKey: apiKey,
+    parentId: 'veriff-root',
+    onSession: function(err, response) {
+        window.veriffSDK.createVeriffFrame({ url: response.verification.url,
+         onEvent: function(msg) {
+            switch(msg) {
+            case window.veriffSDK.MESSAGES.FINISHED:
+                console.log("Veriff Flow Finished");
+                window.top.location.href = `/#VeriffFinished`;
+                break;
+        }
+  }});
+    }
+  });
+  veriff.setParams({
+    person: {
+      givenName: ' ',
+      lastName: ' '
+    },
+    vendorData: email
+  });
+  veriff.mount({
+    formLabel: {
+      vendorData: 'Email'
+    }
+  });
+</script>
+</body>
+</html>

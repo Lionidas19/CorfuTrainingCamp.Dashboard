@@ -97261,7 +97261,7 @@ var $async$yu=A.B(function(c,d){if(c===1)return A.x(d,r)
 while(true)switch(s){case 0:if(p.fx.length===0)p.W(new A.aod(p))
 o=A.cZ("https://api.brevo.com/v3/smtp/email",0,null)
 n=t.N
-m=A.aj(["api-key","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","Content-Type","application/json"],n,n)
+m=A.aj(["api-key","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","Content-Type","application/json"],n,n)
 s=3
 return A.t(A.a2Z(o,B.aq.wn(A.aj(["to",A.b([A.aj(["name",b,"email",a],n,n)],t.m0),"templateId",1,"params",A.aj(["link","https://corfu-training-camp-app-q6xrq.ondigitalocean.app","password",p.fx],n,n)],n,t.K),null),null,m),$async$yu)
 case 3:l=d

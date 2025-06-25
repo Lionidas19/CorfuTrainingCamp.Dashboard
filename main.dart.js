@@ -88309,7 +88309,7 @@ if(s.b.test(a))return null
 return"Please enter a valid email address"},
 $S:79}
 A.an6.prototype={
-$1(a){var s=A.bS("^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*(?:\\W|\\_))(?!.* ).{8,16}$",!0,!1,!1)
+$1(a){var s=A.bS("^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?!.* ).{8,16}$",!0,!1,!1)
 s=s.b.test(a)
 if(s)return null
 return"Please enter a valid password\n\nPassword must contain:\n- 8 to 16 characters\n- at least one uppercase letter\n- at least one lowercase letter\n- at least one number\n- at least one special character"},
